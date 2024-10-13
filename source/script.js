@@ -15,9 +15,21 @@ function displayTask(title, about, index) {
                 <div>${about}</div
             </div>
             <button onclick="deleteTask(${index})">Delete</button>
+            <div class="button-container" style="display: none;">
+                <button>Share</button>
+                <button>Info</button>
+                <button>Edit</button>
+            </div>
         </div>
     `;
     taskContainer.appendChild(taskDiv);
+
+    taskDiv.addEventListener('click', function(event) {
+        if (!event.target.classList.contains('delete-btn')) {
+            const buttonContainer = taskDiv.querySelector('.button-container');
+            buttonContainer.style.display = buttonContainer.style.display === 'none' ? 'block' : 'none';
+        }
+    });
 }
 
 function addTask(event) {
