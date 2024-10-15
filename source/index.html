@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles/common.css">
+    <link rel="stylesheet" href="styles/modals.css">
 </head>
 
 <body>
@@ -16,7 +16,38 @@
     </form>
     <div id="taskContainer"></div>
 
-    <script src="script.js"></script>
+    <div id="delete-modal" class="modal">
+        <div class="modal-content">
+            <p>Delete this task?</p>
+            <button id="confirm-delete">Yes</button>
+            <button class="cancel">No</button>
+        </div>
+    </div>
+
+    <div id="share-modal" class="modal">
+        <div class="modal-content">
+            <p id="share-modal-message">Share this task.</p>
+            <button class="cancel">Cancel</button>
+        </div>
+    </div>
+
+    <div id="info-modal" class="modal">
+        <div class="modal-content">
+            <p>Information about this task.</p>
+            <button class="cancel">Cancel</button>
+        </div>
+    </div>
+
+    <div id="edit-modal" class="modal">
+        <div class="modal-content">
+            <p>Edit this task.</p>
+            <button class="cancel">Cancel</button>
+        </div>
+    </div>
+
+    <script src="scripts/tasks.js"></script>
+    <script src="scripts/modals.js"></script>
+    <script src="scripts/delete.js"></script>
 </body>
 
 </html>
