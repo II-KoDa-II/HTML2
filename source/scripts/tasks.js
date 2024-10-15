@@ -17,7 +17,7 @@ function displayTask(title, about, index) {
         <div class="button-container task-buttons" style="display: none;">
             <button class="task-buttons" onclick="shareModal()">Share</button>
             <button class="task-buttons" onclick="infoModal()">Info</button>
-            <button class="task-buttons" onclick="editModal()">Edit</button>
+            <button class="task-buttons" onclick="editModal(${index})">Edit</button>
         </div>
     `;
     taskContainer.appendChild(taskDiv);

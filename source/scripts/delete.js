@@ -1,11 +1,5 @@
-let currentTaskIndex;
-
-document.getElementById('confirm-delete').onclick = function () {
-    deleteTask(currentTaskIndex);
-    document.getElementById('delete-modal').style.display = 'none';
-};
-
 function deleteTask(index) {
+    document.getElementById('delete-modal').style.display = 'none';
     let taskList = JSON.parse(localStorage.getItem('taskList')) || [];
     taskList.splice(index, 1);
     localStorage.setItem('taskList', JSON.stringify(taskList));

@@ -10,7 +10,7 @@
 
 <body>
     <form id="taskForm" onsubmit="addTask(event)">
-        <input type="text" id="title" placeholder="Task..." required>
+        <input type="text" id="title" placeholder="Title..." required>
         <input type="text" id="about" placeholder="About...">
         <button type="submit">Create Task</button>
     </form>
@@ -19,7 +19,7 @@
     <div id="delete-modal" class="modal">
         <div class="modal-content">
             <p>Delete this task?</p>
-            <button id="confirm-delete">Yes</button>
+            <button onclick="deleteTask(currentTaskIndex);">Yes</button>
             <button class="cancel">No</button>
         </div>
     </div>
@@ -39,15 +39,18 @@
     </div>
 
     <div id="edit-modal" class="modal">
-        <div class="modal-content">
-            <p>Edit this task.</p>
+        <form class="modal-content" onsubmit="editTask(event)">
+            <input type="text" id="edit-title" placeholder="Task..." required>
+            <input type="text" id="edit-about" placeholder="About...">
             <button class="cancel">Cancel</button>
-        </div>
+            <button id="save-edit">Save</button>
+        </form>
     </div>
 
     <script src="scripts/tasks.js"></script>
     <script src="scripts/modals.js"></script>
     <script src="scripts/delete.js"></script>
+    <script src="scripts/edit.js"></script>
 </body>
 
 </html>
