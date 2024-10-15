@@ -3,7 +3,13 @@ function deleteModal(index) {
     document.getElementById('delete-modal').style.display = 'block';
 }
 
-function shareModal() {
+function shareModal(index) {
+    currentTaskIndex = index;
+    const taskList = JSON.parse(localStorage.getItem('taskList')) || [];
+    const task = taskList[index];
+
+    const shareMessage = `${task.title}\n${task.about}`;
+    document.getElementById('copy-task').setAttribute('data-task', shareMessage);
     document.getElementById('share-modal').style.display = 'block';
 }
 

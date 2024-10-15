@@ -4,10 +4,10 @@ function editTask(event) {
     const about = document.getElementById('edit-about').value;
 
     let taskList = JSON.parse(localStorage.getItem('taskList')) || [];
-    taskList[currentTaskIndex] = { title, about }; // Update the task
+    taskList[currentTaskIndex] = { title, about };
     localStorage.setItem('taskList', JSON.stringify(taskList));
 
     document.getElementById('edit-modal').style.display = 'none';
-    taskContainer.innerHTML = ''; // Clear the task container
-    loadTasks(); // Reload tasks to reflect changes
+    taskContainer.innerHTML = '';
+    loadTasks();
 }

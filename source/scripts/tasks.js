@@ -15,7 +15,7 @@ function displayTask(title, about, index) {
             <button class="task-buttons" onclick="deleteModal(${index})">Delete</button>
         </div>
         <div class="button-container task-buttons" style="display: none;">
-            <button class="task-buttons" onclick="shareModal()">Share</button>
+            <button class="task-buttons" onclick="shareModal(${index})">Share</button>
             <button class="task-buttons" onclick="infoModal()">Info</button>
             <button class="task-buttons" onclick="editModal(${index})">Edit</button>
         </div>
