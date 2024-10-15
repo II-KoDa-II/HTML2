@@ -41,6 +41,7 @@ function addTask(event) {
 
     displayTask(title, about, taskList.length - 1);
     taskForm.reset();
+    showNotification('Created new task')
 }
 
 loadTasks();

@@ -10,4 +10,5 @@ function editTask(event) {
     document.getElementById('edit-modal').style.display = 'none';
     taskContainer.innerHTML = '';
     loadTasks();
+    showNotification('Changes saved')
 }

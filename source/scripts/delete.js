@@ -5,4 +5,5 @@ function deleteTask(index) {
     localStorage.setItem('taskList', JSON.stringify(taskList));
     taskContainer.innerHTML = '';
     loadTasks();
+    showNotification('Deleted a task')
 }
