@@ -9,24 +9,24 @@
 </head>
 
 <body>
-    <form id="taskForm" onsubmit="addTask(event)">
+    <div id="task-form">
         <input type="text" id="title" placeholder="Title..." required>
         <input type="text" id="about" placeholder="About...">
-        <button type="submit">Create Task</button>
-    </form>
+        <button id="create-task">Create Task</button>
+    </div>
     <div id="taskContainer"></div>
 
     <div id="delete-modal" class="modal">
         <div class="modal-content">
             <p>Delete this task?</p>
-            <button onclick="deleteTask(currentTaskIndex);">Yes</button>
+            <button id="delete-task">Yes</button>
             <button class="cancel">No</button>
         </div>
     </div>
 
     <div id="share-modal" class="modal">
         <div class="modal-content">
-            <button id="copy-task" onclick="copyTask()">Copy Task</button>
+            <button id="copy-task">Copy Task</button>
         </div>
     </div>
 
@@ -38,22 +38,23 @@
     </div>
 
     <div id="edit-modal" class="modal">
-        <form class="modal-content" onsubmit="editTask(event)">
+        <div class="modal-content">
             <input type="text" id="edit-title" placeholder="Task..." required>
             <input type="text" id="edit-about" placeholder="About...">
-            <button class="cancel">Cancel</button>
-            <button id="save-edit">Save</button>
-        </form>
+            <button type="reset" class="cancel">Cancel</button>
+            <button id="edit-task">Save</button>
+        </div>
     </div>
 
     <div id="notification" class="notification">
     </div>
 
-    <script src="scripts/tasks.js"></script>
-    <script src="scripts/modals.js"></script>
+    <script src="scripts/display.js"></script>
+    <script src="scripts/create.js"></script>
     <script src="scripts/delete.js"></script>
     <script src="scripts/edit.js"></script>
     <script src="scripts/share.js"></script>
+    <script src="scripts/misc.js"></script>
 </body>
 
 </html>
