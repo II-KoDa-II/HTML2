@@ -4,7 +4,7 @@ function shareModal(index) {
 
     const shareMessage = `${task.title}\n${task.about}`;
     document.getElementById('copy-task').setAttribute('data-task', shareMessage);
-    document.getElementById('share-modal').style.display = 'block';
+    document.getElementById('share-modal').style.display = 'flex';
 }
 
 document.getElementById('copy-task').addEventListener('click', copyTask);

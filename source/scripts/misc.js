@@ -1,13 +1,8 @@
-function infoModal() {
-    document.getElementById('info-modal').style.display = 'block';
-}
-
 document.getElementById('delete-modal').addEventListener('click', modalClose);
 document.getElementById('share-modal').addEventListener('click', modalClose);
-document.getElementById('info-modal').addEventListener('click', modalClose);
 
 function modalClose(event) {
-    const modals = ['delete-modal', 'share-modal', 'info-modal'];
+    const modals = ['delete-modal', 'share-modal'];
     modals.forEach(modalId => {
         const modal = document.getElementById(modalId);
         if (event.target == modal) {

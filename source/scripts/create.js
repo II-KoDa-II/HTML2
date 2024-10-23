@@ -8,7 +8,7 @@ function createTask() {
     const maxIndex = taskList.length ? Math.max(...taskList.map(task => task.index)) : -1;
 
     let index;
-    if (maxIndex === taskList.length - 1) {
+    if (maxIndex == taskList.length - 1) {
         index = maxIndex + 1;
     } else {
         const existingIndexes = new Set(taskList.map(task => task.index));
@@ -18,8 +18,11 @@ function createTask() {
         }
     }
 
-    taskList.push({title, about, index});
+    taskList.push({ title, about, index });
     localStorage.setItem('taskList', JSON.stringify(taskList));
+
+    document.getElementById('title').value = '';
+    document.getElementById('about').value = '';
 
     displayTask(title, about, index);
     showNotification('Created new task');

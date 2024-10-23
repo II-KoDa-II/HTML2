@@ -5,7 +5,7 @@ function editModal(index) {
 
     document.getElementById('edit-title').value = task.title;
     document.getElementById('edit-about').value = task.about;
-    document.getElementById('edit-modal').style.display = 'block';
+    document.getElementById('edit-modal').style.display = 'flex';
 }
 
 document.getElementById('edit-task').addEventListener('click', editTask);
@@ -16,7 +16,10 @@ function editTask(event) {
     const about = document.getElementById('edit-about').value;
 
     let taskList = JSON.parse(localStorage.getItem('taskList')) || [];
-    taskList[currentTaskIndex] = { title, about };
+
+    const taskIndex = taskList.findIndex(task => task.index == currentTaskIndex);
+
+    taskList[taskIndex] = { index: currentTaskIndex, title, about };
     localStorage.setItem('taskList', JSON.stringify(taskList));
 
     const taskDiv = document.getElementById(currentTaskIndex);
@@ -24,8 +27,8 @@ function editTask(event) {
     taskDiv.querySelector('.about-container').innerText = about;
 
     const buttonContainer = taskDiv.querySelector('.button-container');
-    buttonContainer.style.display = buttonContainer.style.display == 'none' ? 'block' : 'none';
+    buttonContainer.style.display = buttonContainer.style.display === 'none' ? 'block' : 'none';
 
     document.getElementById('edit-modal').style.display = 'none';
-    showNotification('Changes saved')
+    showNotification('Changes saved');
 }

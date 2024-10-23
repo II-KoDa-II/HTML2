@@ -5,44 +5,52 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/main.css">
     <link rel="stylesheet" href="styles/modals.css">
 </head>
 
 <body>
-    <div id="task-form">
-        <input type="text" id="title" placeholder="Title..." required>
-        <input type="text" id="about" placeholder="About...">
-        <button id="create-task">Create Task</button>
+    <div id="task-form" class="horizontal-flex">
+        <div class="vertical-flex">
+            <input type="text" id="title" placeholder="Title...">
+            <input type="text" id="about" placeholder="About...">
+        </div>
+        <div class="individual-button">
+            <button id="create-task"><img src="assets\icons\create.svg"></button>
+        </div>
     </div>
-    <div id="taskContainer"></div>
+    <div id="task-container"></div>
 
     <div id="delete-modal" class="modal">
-        <div class="modal-content">
+        <div class="modal-delete">
             <p>Delete this task?</p>
-            <button id="delete-task">Yes</button>
-            <button class="cancel">No</button>
+            <div class="horizontal-flex">
+                <button id="delete-task" class="text-button">Yes</button>
+                <button class="cancel text-button">No</button>
+            </div>
         </div>
     </div>
 
     <div id="share-modal" class="modal">
-        <div class="modal-content">
-            <button id="copy-task">Copy Task</button>
-        </div>
-    </div>
-
-    <div id="info-modal" class="modal">
-        <div class="modal-content">
-            <p>Information about this task.</p>
-            <button class="cancel">Cancel</button>
+        <div class="modal-share">
+            <button id="copy-task"><img src="assets/icons/copy.svg"></button>
+            <button class="sharing-option"><img src="assets/icons/vk.svg"></button>
+            <button class="sharing-option"><img src="assets/icons/telegram.svg"></button>
+            <button class="sharing-option"><img src="assets/icons/whatsapp.svg"></button>
+            <button class="sharing-option"><img src="assets/icons/facebook.svg"></button>
         </div>
     </div>
 
     <div id="edit-modal" class="modal">
-        <div class="modal-content">
-            <input type="text" id="edit-title" placeholder="Task..." required>
-            <input type="text" id="edit-about" placeholder="About...">
-            <button type="reset" class="cancel">Cancel</button>
-            <button id="edit-task">Save</button>
+        <div class="modal-edit">
+            <div class="edit-form">
+                <input type="text" id="edit-title" placeholder="Task...">
+                <textarea id="edit-about" placeholder="About..."></textarea>
+            </div>
+            <div class="horizontal-flex">
+                <button class="cancel text-button">Cancel</button>
+                <button id="edit-task" class="text-button">Save</button>
+            </div>
         </div>
     </div>
 

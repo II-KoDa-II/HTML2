@@ -1,7 +1,7 @@
 let deleteTaskHandler;
 
 function deleteModal(index) {
-    document.getElementById('delete-modal').style.display = 'block';
+    document.getElementById('delete-modal').style.display = 'flex';
 
     const deleteButton = document.getElementById('delete-task');
     if (deleteTaskHandler) {
@@ -17,12 +17,11 @@ function deleteTask(index) {
     document.getElementById('delete-modal').style.display = 'none';
     let taskList = JSON.parse(localStorage.getItem('taskList')) || [];
 
-    taskList = taskList.filter(task => task.index !== index);
+    taskList.splice(index, 1);
     localStorage.setItem('taskList', JSON.stringify(taskList));
 
-    const taskDiv = document.getElementById(index);
-    taskDiv.parentElement.remove();
+    document.getElementById('task-container').innerHTML = '';
+    loadTasks();
 
     showNotification('Deleted a task');
-    noTasksDisplay();
 }
